@@ -1,0 +1,31 @@
+<div class="containe mt-5 p-5">
+      <form [formGroup]="searchform" (ngSubmit)="onformSubmit()">
+      <div class="row">
+          <div class="col-md-10">     
+                     
+                    <input type="text" class="form-control" placeholder="search movie here..."  formControlName="movieName">
+                
+          </div>
+          <div class="col-md-2 p-0">
+            <button mat-raised-button color="warn" type="submit">Search</button>
+          </div>   
+      </div>
+    </form>
+
+
+    <div class="row mt-5">
+        <div class="col-lg-4" *ngFor="let s of searchresult">
+                 
+                <ng-container *ngIf="s.backdrop_path">
+                    <img src="https://image.tmdb.org/t/p/original/{{s.backdrop_path}}" alt="movie-poster" >
+                </ng-container>     
+           
+                       
+                        <!-- <div class="col-lg-9 mt-4 mb-4">
+                            <h5>{{s.original_title}}</h5>    
+                        </div> -->
+                
+        </div>
+        
+    </div>
+</div>
